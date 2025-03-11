@@ -1,0 +1,15 @@
+ion-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+ion-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+ion-button {
+    --background: #3880ff;
+    --color: white;
+}
