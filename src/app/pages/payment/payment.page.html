@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>💳 Pago</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-card *ngFor="let item of cart">
+      <ion-card-header>
+        <ion-card-title>{{ item.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Cantidad: <strong>{{ item.quantity }}</strong></p>
+        <p>Precio: <strong>${{ item.price }}</strong></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-item-divider></ion-item-divider>
+  <ion-item>
+    <ion-label><strong>Total a pagar:</strong></ion-label>
+    <ion-text color="primary"><strong>${{ totalAmount }}</strong></ion-text>
+  </ion-item>
+
+  <ion-button expand="full" (click)="pay()" class="pay-button">💰 Pagar</ion-button>
+
+  <div id="paypal-button-container" class="paypal-container"></div>
+
+  <ion-text *ngIf="paymentSuccess" color="success">
+    ✅ ¡Pago exitoso en sandbox!
+  </ion-text>
+</ion-content>
